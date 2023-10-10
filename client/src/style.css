@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+button:hover {
+    cursor: pointer;
+    filter: brightness(85%);
+    transition: 0.3s ease-in-out;
+}
+
+/**Home**/
+.playlist-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.playlist-container h1 {
+    text-align: center;
+}
+
+.album-title {
+    font-style: italic;
+}
+
+.add-btn {
+    display: block;
+    margin: 0 auto;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.add-btn a {
+    color: #fff;
+    text-decoration: none;
+}
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: .9em;
+    max-width: 400px;
+    min-width: 350px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.15);
+}
+
+.content-table a {
+    color: #000;
+    text-decoration: none;
+}
+
+.content-table a:hover {
+    text-decoration: underline;
+}
+
+.content-table thead tr {
+    background-color: #007bff;
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+}
+
+
+.content-table tbody tr {
+    border-bottom: 1px solid #a4a4a4;
+}
+
+.content-table tbody tr:nth-child(odd){
+    background-color: rgb(255, 255, 255);
+}
+
+.content-table tbody tr:nth-child(even){
+    background-color: rgb(239, 239, 239);
+}
+
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr:last-child{
+   border-radius: 30px;
+    border-bottom: none;
+}
+
+.album-cover {
+    width: 60px;
+}
+
+.update-btn,
+.delete-btn {
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    border: none;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.update-btn {
+    background-color: #28a745;
+    margin: 0 20px
+}
+
+.update-btn i {
+    color: #fff;
+}
+
+
+
+/**Add**/
+.form, .update-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 350px;
+    max-width:400px;
+    border: 3px solid #f5f5f5;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form input, .update-form input {
+    padding: 10px;
+}
+
+.form h1, .update-form h1 {
+    text-align: center;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    width: 100px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer; 
+}
+
+/** UPDATE **/
+.song-to-update-container {
+    text-align: center;
+}
+
+.song-to-update-container p {
+    margin-bottom: 8px;
+}
+
+.update-album-cover {
+    width: 150px;
+    margin-bottom: 8px;
+}
+
+.update-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
