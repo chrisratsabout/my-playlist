@@ -2,14 +2,13 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import HomeSortByArtist from './HomeSortByArtist'
 import { useNavigate } from 'react-router-dom'
 
-const Home = () => {
+const HomeSortByAlbum = () => {
     const [songs, setSongs] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:8800/songs")
+        axios.get("http://localhost:8800/songs/album")
             .then(res => {
                 setSongs(res.data)
             })
@@ -26,7 +25,6 @@ const Home = () => {
             console.log(err)
         }
     }
-
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -39,12 +37,13 @@ const Home = () => {
             navigate(`/${e.target.value}`)
         }
     }
+    
     return (
         <>
             <div className="playlist-container">
                 <h1>My Playlist</h1>
                 <select name="sort" id="sort" onChange={handleChange}>
-                <option value="sort-by">Sort By:</option>
+                    <option value="sort-by">Sort By:</option>
                     <option value="artist">Artist</option>
                     <option value="album">Album</option>
                     <option value="order-added">Order Added</option>
@@ -69,7 +68,7 @@ const Home = () => {
                                     <td className='album-title'>{song.album}</td>
                                     <td>
                                         <button className="update-btn" ><Link to={`/update/${song.id}`}><i className="fa-regular fa-pen-to-square"></i></Link></button>
-                                        <button className="delete-btn" onClick={()=>{handleDelete(song.id)}}><i className="fa-solid fa-trash-can"></i></button></td>
+                                        <button className="delete-btn" onClick={() => { handleDelete(song.id) }}><i className="fa-solid fa-trash-can"></i></button></td>
 
                                 </tr>
                             })
@@ -79,10 +78,7 @@ const Home = () => {
                 <button className="add-btn"><Link to="/add">Add Song</Link></button>
             </div>
         </>
-
-
-
     )
 }
 
-export default Home
+export default HomeSortByAlbum

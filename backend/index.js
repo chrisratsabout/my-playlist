@@ -31,6 +31,26 @@ app.get("/songs", (req, res) => {
     })
 })
 
+//endpoint to get all songs from database sorted by artist - get request
+app.get("/songs/artist", (req, res) => {
+    const q = "SELECT * FROM songs ORDER BY artist"
+
+    db.query(q, (err, data) => {
+        if(err) return res.json(err)
+        return res.json(data)
+    })
+})
+
+//endpoint to get all songs from database sorted by album - get request
+app.get("/songs/album", (req, res) => {
+    const q = "SELECT * FROM songs ORDER BY album"
+
+    db.query(q, (err, data) => {
+        if(err) return res.json(err)
+        return res.json(data)
+    })
+})
+
 //endpoint to get a song by id
 app.get("/songs/:id", (req, res) => {
     const songId = req.params.id;
