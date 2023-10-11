@@ -42,12 +42,15 @@ const HomeSortByArtist = () => {
         <>
             <div className="playlist-container">
                 <h1>My Playlist</h1>
+                <div className="playlist-btn-container">
+                <button className="add-btn"><Link to="/add">Add Song</Link></button>
                 <select name="sort" id="sort" onChange={handleChange}>
-                    <option value="sort-by">Sort By:</option>
+                <option value="sort-by">Sort By:</option>
                     <option value="artist">Artist</option>
                     <option value="album">Album</option>
                     <option value="order-added">Order Added</option>
                 </select>
+                </div>
                 <table className='content-table'>
                     <thead>
                         <tr>
@@ -75,7 +78,6 @@ const HomeSortByArtist = () => {
                         }
                     </tbody>
                 </table>
-                <button className="add-btn"><Link to="/add">Add Song</Link></button>
             </div>
         </>
     )

@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+:root {
+    --main-color: #007bff;
+    --background-color: #ffffff;
+    --text-color: #fff;
 
+}
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +13,7 @@
 }
 
 body {
-    background-color: #ffffff;
+    background-color: var(--background-color);
 }
 
 button:hover {
@@ -35,16 +40,15 @@ button:hover {
 
 .add-btn {
     display: block;
-    margin: 0 auto;
-    background-color: #007bff;
-    color: #fff;
+    background-color: var(--main-color);
+    color: var(--text-color);
     padding: 10px;
     border-radius: 10px;
     border: none;
 }
 
 .add-btn a {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
 }
 .content-table {
@@ -68,7 +72,7 @@ button:hover {
 }
 
 .content-table thead tr {
-    background-color: #007bff;
+    background-color: var(--main-color);
     color: #fff;
     text-align: left;
     font-weight: bold;
@@ -93,6 +97,11 @@ button:hover {
     padding: 12px 15px;
 }
 
+.content-table tbody tr:hover {
+    filter: brightness(95%);
+    transition: 0.3s ease-in-out;
+}
+
 .content-table tbody tr:last-child{
    border-radius: 30px;
     border-bottom: none;
@@ -112,7 +121,7 @@ button:hover {
 
 .delete-btn {
     background-color: #dc3545;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .update-btn {
@@ -121,7 +130,7 @@ button:hover {
 }
 
 .update-btn i {
-    color: #fff;
+    color: var(--text-color);
 }
 
 
@@ -152,8 +161,8 @@ button:hover {
 }
 
 .submit-btn {
-    background-color: #007bff;
-    color: #fff;
+    background-color: var(--main-color);
+    color: var(--text-color);
     padding: 10px;
     width: 100px;
     border-radius: 8px;
@@ -179,4 +188,20 @@ button:hover {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+/**SORT SELECT MENU**/
+.playlist-btn-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#sort {
+    background-color: #6c757d;
+    color: var(--text-color);
+    padding: 6px;
+    border-radius: 10px;
+    border: none;
+
 }
