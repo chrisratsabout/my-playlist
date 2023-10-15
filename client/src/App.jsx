@@ -5,6 +5,8 @@ import Update from "./components/Update"
 import "./style.css"
 import HomeSortByArtist from "./components/HomeSortByArtist"
 import HomeSortByAlbum from "./components/HomeSortByAlbum"
+import Login from "./components/Login"
+import Search from "./components/Search"
 
 
 function App() {
@@ -15,7 +17,9 @@ function App() {
       <div className="App">
         <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home/> } />
+          <Route path="/" element={<Login/> }/>
+          <Route path="/search" element={<Search/> }/>
+          <Route path="/home" element={<Home/> } />
           <Route path="/artist" element={<HomeSortByArtist/> } />
           <Route path="/album" element={<HomeSortByAlbum/> } />
           <Route path="/add" element={<Add/> } />

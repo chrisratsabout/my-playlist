@@ -25,9 +25,9 @@ button:hover {
 /**Home**/
 .playlist-container {
     position: absolute;
-    top: 50%;
+    top: 100px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 }
 
 .playlist-container h1 {

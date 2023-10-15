@@ -5,7 +5,7 @@ import axios from 'axios'
 import HomeSortByArtist from './HomeSortByArtist'
 import { useNavigate } from 'react-router-dom'
 
-const Home = () => {
+const Home = ({ token, setToken }) => {
     const [songs, setSongs] = useState([])
 
     useEffect(() => {
@@ -39,12 +39,19 @@ const Home = () => {
             navigate(`/${e.target.value}`)
         }
     }
+
+    const logout = () => {
+        setToken("")
+        window.localStorage.removeItem("token")
+        navigate("/")
+    }
     return (
         <>
+        <button onClick={logout}>Logout</button>
             <div className="playlist-container">
                 <h1>My Playlist</h1>
                 <div className="playlist-btn-container">
-                <button className="add-btn"><Link to="/add">Add Song</Link></button>
+                <button className="add-btn"><Link to="/search">Search</Link></button>
                 <select name="sort" id="sort" onChange={handleChange}>
                 <option value="sort-by">Sort By:</option>
                     <option value="artist">Artist</option>
@@ -73,7 +80,6 @@ const Home = () => {
                                     <td>
                                         <button className="update-btn" ><Link to={`/update/${song.id}`}><i className="fa-regular fa-pen-to-square"></i></Link></button>
                                         <button className="delete-btn" onClick={()=>{handleDelete(song.id)}}><i className="fa-solid fa-trash-can"></i></button></td>
-
                                 </tr>
                             })
                         }
