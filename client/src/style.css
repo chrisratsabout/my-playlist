@@ -256,6 +256,9 @@ button:hover {
 
 
 /** UPDATE **/
+.update-container {
+    background-color: #fff;
+}
 .song-to-update-container {
     text-align: center;
 }
