@@ -17,6 +17,7 @@ body {
     background-image: url(/Users/chrisratsabout/Desktop/my-playlist-spotify/client/src/assets/background.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 button:hover {
