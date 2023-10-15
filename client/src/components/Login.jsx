@@ -28,9 +28,13 @@ const Login = () => {
     
 {
     !token ?
-    <div>
-    <h1>Spotify React</h1>
+    <div className='login-container'>
+    <h1>My Playlist</h1>
+    <p>Use Spotify's API to add songs to your playlist.</p>
+    <button className="login-btn">
     <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a>
+    </button>
+    
     </div>
     :
     <Home token={token} setToken={setToken}/>
