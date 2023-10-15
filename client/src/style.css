@@ -238,6 +238,7 @@ button:hover {
 }
 
 .search-form input {
+    padding: 10px;
     width: 200px;
 }
 

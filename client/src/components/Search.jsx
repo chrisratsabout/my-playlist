@@ -82,7 +82,7 @@ const Search = () => {
 
                 <h2>Search for tracks:</h2>
                 <form className="search-form" onSubmit={searchTracks}>
-                    <input type="text" onChange={(e) => setSearchKey(e.target.value)} placeholder=' eg. We Will Rock You'/>
+                    <input type="text" onChange={(e) => setSearchKey(e.target.value)} placeholder='eg. We Will Rock You'/>
                     <button className="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
                 </form>
 

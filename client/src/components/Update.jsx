@@ -68,8 +68,9 @@ const Update = () => {
         <label htmlFor="url">URL:</label>
         <input type="text" placeholder='URL of song' name='url' onChange={handleChange} autoComplete='off' />
         <button className="submit-btn" onClick={handleSubmit}>Update Song</button>
-        <button className="home-btn"><Link to="/">Back to home</Link></button>
+       
       </div>
+      <button className="home-btn"><Link to="/">Back to home</Link></button>
     </div>
   )
 }
