@@ -2,7 +2,6 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import HomeSortByArtist from './HomeSortByArtist'
 import { useNavigate } from 'react-router-dom'
 
 const Home = ({ token, setToken }) => {
@@ -47,11 +46,11 @@ const Home = ({ token, setToken }) => {
     }
     return (
         <>
-        <button onClick={logout}>Logout</button>
+        <button onClick={logout} className='logout-link'>Logout</button>
             <div className="playlist-container">
                 <h1>My Playlist</h1>
                 <div className="playlist-btn-container">
-                <button className="add-btn"><Link to="/search">Search</Link></button>
+                <button className="search-btn"><Link to="/search"><i class="fa-solid fa-magnifying-glass"></i>Search</Link></button>
                 <select name="sort" id="sort" onChange={handleChange}>
                 <option value="sort-by">Sort By:</option>
                     <option value="artist">Artist</option>

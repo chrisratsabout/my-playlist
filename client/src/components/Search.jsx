@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Search = () => {
     const [token, setToken] = useState("")
@@ -28,6 +29,7 @@ const Search = () => {
     const [searchKey, setSearchKey] = useState("")
 
     const searchTracks = async (e) => {
+
         e.preventDefault();
         const { data } = await axios.get("https://api.spotify.com/v1/search", {
             headers: {
@@ -38,19 +40,13 @@ const Search = () => {
                 type: "track"
             }
         })
-        console.log(data.tracks.items);
+
         setTracks(data.tracks.items);
     }
 
     const navigate = useNavigate();
 
-    const addSongToPlaylist = async (e) => {
-        // console.log(e.target.parentElement.parentElement.children[0].children[0].getAttribute('src'))
-        // console.log(e.target.parentElement.parentElement.children[1].children[0].innerText)
-        // console.log(e.target.parentElement.parentElement.children[1].children[0].getAttribute("href"))
-        // console.log(e.target.parentElement.parentElement.children[2].innerText)
-        // console.log(e.target.parentElement.parentElement.children[3].innerText)
-        
+    const addSongToPlaylist = async (e) => {        
         song.cover = e.target.parentElement.parentElement.children[0].children[0].getAttribute('src')
         song.title = e.target.parentElement.parentElement.children[1].children[0].innerText
         song.artist = e.target.parentElement.parentElement.children[2].innerText
@@ -75,7 +71,7 @@ const Search = () => {
                 <td><a href={!track.preview_url ? "https://www.spotify.com" : track.preview_url} target='blank'>{track.name}</a></td>
                 <td>{track.album.artists[0].name}</td>
                 <td className='album-title'>{track.album.name}</td>
-                <td><button onClick={addSongToPlaylist}>+</button></td>
+                <td><i class="fa-solid fa-plus" onClick={addSongToPlaylist}></i></td>
             </tr>
         })
     }
@@ -85,9 +81,9 @@ const Search = () => {
             <div className="playlist-container">
 
                 <h2>Search for tracks:</h2>
-                <form onSubmit={searchTracks}>
-                    <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
-                    <button type="submit">Search</button>
+                <form className="search-form" onSubmit={searchTracks}>
+                    <input type="text" onChange={(e) => setSearchKey(e.target.value)} placeholder=' eg. We Will Rock You'/>
+                    <button className="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
                 </form>
 
                 <table className='content-table'>
@@ -101,9 +97,7 @@ const Search = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {
-                            renderTracks()
-                        }
+                        {renderTracks()}
                     </tbody>
                 </table>
             </div>

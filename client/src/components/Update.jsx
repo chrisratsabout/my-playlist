@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const Update = () => {
   const [song, setSong] = useState([])
@@ -67,6 +68,7 @@ const Update = () => {
         <label htmlFor="url">URL:</label>
         <input type="text" placeholder='URL of song' name='url' onChange={handleChange} autoComplete='off' />
         <button className="submit-btn" onClick={handleSubmit}>Update Song</button>
+        <button className="home-btn"><Link to="/">Back to home</Link></button>
       </div>
     </div>
   )

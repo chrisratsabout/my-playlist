@@ -14,6 +14,9 @@
 
 body {
     background-color: var(--background-color);
+    background-image: url(/Users/chrisratsabout/Desktop/my-playlist-spotify/client/src/assets/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 button:hover {
@@ -23,6 +26,19 @@ button:hover {
 }
 
 /**Home**/
+.logout-link {
+    background-color: transparent;
+    border: none;
+    color: var(--main-color);
+    padding: 10px ;
+    display: block;
+    margin-left: auto;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}
+
 .playlist-container {
     position: absolute;
     top: 100px;
@@ -38,7 +54,7 @@ button:hover {
     font-style: italic;
 }
 
-.add-btn {
+.search-btn {
     display: block;
     background-color: var(--main-color);
     color: var(--text-color);
@@ -47,7 +63,7 @@ button:hover {
     border: none;
 }
 
-.add-btn a {
+.search-btn a {
     color: var(--text-color);
     text-decoration: none;
 }
@@ -107,6 +123,7 @@ button:hover {
     border-bottom: none;
 }
 
+
 .album-cover {
     width: 60px;
 }
@@ -164,11 +181,52 @@ button:hover {
     background-color: var(--main-color);
     color: var(--text-color);
     padding: 10px;
-    width: 100px;
+    width: 100%;
     border-radius: 8px;
     border: none;
     cursor: pointer; 
 }
+
+.home-btn {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 10px;
+    width: 100%;
+    border: 1px solid var(--main-color);
+    border-radius: 8px;
+    cursor: pointer; 
+}
+
+.home-btn a{
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+/** SEARCH **/
+.search-form {
+    margin: 10px 0;
+    display: flex;
+    gap: 10px;
+    height: 50px;
+}
+
+.search-form input {
+    width: 200px;
+}
+
+.fa-plus {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.fa-plus:hover {
+    cursor: pointer;
+}
+
 
 /** UPDATE **/
 .song-to-update-container {
@@ -205,3 +263,8 @@ button:hover {
     border: none;
 
 }
+
+.fa-magnifying-glass {
+    margin-right: 10px;
+}
+
