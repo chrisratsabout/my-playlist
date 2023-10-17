@@ -62,7 +62,7 @@ app.get("/songs/:id", (req, res) => {
     })
 })
 
-//endpoint to add book to database - post request
+//endpoint to add song to database - post request
 app.post("/songs", (req, res) => {
     const q = "INSERT INTO songs (`title`, `artist`, `album`, `cover`, `url`) VALUES (?)"
     const values = [req.body.title, req.body.artist, req.body.album, req.body.cover, req.body.url]
@@ -73,7 +73,7 @@ app.post("/songs", (req, res) => {
     })
 })
 
-//endpoint to update book to database - put request
+//endpoint to update song to database - put request
 app.put("/songs/:id", (req, res) => {
     const songId = req.params.id;
     const q = "UPDATE songs SET `title` = ?, `artist` = ?, `album` = ?, `cover` = ?, `url` = ? WHERE id = ?"
