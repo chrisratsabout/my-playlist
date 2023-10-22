@@ -78,14 +78,16 @@ const Search = () => {
 
     return (
         <>
-            <div className="playlist-container">
-
-                <h2>Search for tracks:</h2>
+            <div className="playlist-container search">
+<div className="search-bar-container">
+<h2>Search for tracks:</h2>
                 <form className="search-form" onKeyUp={searchTracks}>
                     <input type="text" onChange={(e) => setSearchKey(e.target.value)} placeholder='eg. We Will Rock You'/>
                 </form>
+</div>
 
-                <table className='content-table'>
+
+                <table className='content-table search'>
                     <thead>
                         <tr>
                             <th>Artwork</th>

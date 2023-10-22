@@ -106,6 +106,16 @@ button:hover {
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.15);
 }
 
+.content-table.search {
+    border-collapse: collapse;
+    font-size: .9em;
+    max-width: 400px;
+    min-width: 350px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.15);
+}
+
 .content-table a {
     color: #000;
     text-decoration: none;
@@ -231,16 +241,20 @@ button:hover {
 }
 
 /** SEARCH **/
-.search-form {
-    margin: 10px 0;
+.search-bar-container {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+.search-form {
+    display: block;
+    margin-top: 10px;
     height: 50px;
 }
 
 .search-form input {
     padding: 10px;
-    width: 200px;
+    width: 250px;
 }
 
 .fa-plus {
