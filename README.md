@@ -1,7 +1,9 @@
 # My Playlist - Spotify
-Users can add songs to a playlist by searching for tracks with Spotify's API. After adding to your custom playlist, users can update info and delete songs. This project was made with MySQL, Express, React, and Node.
+This application enables users to curate playlists by searching for tracks through Spotify's API. Users can seamlessly add songs to their customized playlists, and afterward, they have the flexibility to update song info or remove tracks as desired. The project was crafted using a combination of MySQL, Express, React, and Node.
 
 
-https://github.com/chrisratsabout/my-playlist/assets/104924343/0af6c304-b81c-4366-b197-0502cf9000ee
+https://github.com/chrisratsabout/my-playlist/assets/104924343/7ac53d9b-842b-440b-8909-1378cd2a45ce
+
+
 
 
