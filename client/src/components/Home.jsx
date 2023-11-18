@@ -76,7 +76,7 @@ const Home = ({ token, setToken }) => {
             <div className="playlist-container">
                 <h1>My Playlist</h1>
                 <div className="playlist-btn-container">
-                <button className="search-btn"><Link to="/search"><i class="fa-solid fa-magnifying-glass"></i>Search</Link></button>
+                <button className="search-btn"><Link to="/search"><i className="fa-solid fa-magnifying-glass"></i>Search</Link></button>
                 <select name="sort" id="sort" onChange={handleChange}>
                 <option value="sort-by">Sort By:</option>
                     <option value="artist">Artist</option>

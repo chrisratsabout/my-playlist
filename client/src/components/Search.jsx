@@ -46,7 +46,7 @@ const Search = () => {
 
     const navigate = useNavigate();
 
-    const addSongToPlaylist = async (e) => {        
+    const addSongToPlaylist = async (e) => {
         song.cover = e.target.parentElement.parentElement.children[0].children[0].getAttribute('src')
         song.title = e.target.parentElement.parentElement.children[1].children[0].innerText
         song.artist = e.target.parentElement.parentElement.children[2].innerText
@@ -54,13 +54,13 @@ const Search = () => {
         song.url = e.target.parentElement.parentElement.children[1].children[0].getAttribute("href")
 
         console.log(song)
-        
+
         e.preventDefault();
         try {
-          await axios.post("http://localhost:8800/songs", song)
-          navigate("/")
+            await axios.post("http://localhost:8800/songs", song)
+            navigate("/")
         } catch (err) {
-          console.log(err)
+            console.log(err)
         }
     }
 
@@ -71,20 +71,27 @@ const Search = () => {
                 <td><a href={!track.preview_url ? "https://www.spotify.com" : track.preview_url} target='blank'>{track.name}</a></td>
                 <td>{track.album.artists[0].name}</td>
                 <td className='album-title'>{track.album.name}</td>
-                <td><i class="fa-solid fa-plus" onClick={addSongToPlaylist}></i></td>
+                <td><i className="fa-solid fa-plus" onClick={addSongToPlaylist}></i></td>
             </tr>
         })
     }
 
+    const logout = () => {
+        setToken("")
+        window.localStorage.removeItem("token")
+        navigate("/")
+    }
+
     return (
         <>
+        <button onClick={logout} className='logout-link'>Logout</button>
             <div className="playlist-container search">
-<div className="search-bar-container">
-<h2>Search for tracks:</h2>
-                <form className="search-form" onKeyUp={searchTracks}>
-                    <input type="text" onChange={(e) => setSearchKey(e.target.value)} placeholder='eg. We Will Rock You'/>
-                </form>
-</div>
+                <div className="search-bar-container">
+                    <h2>Search for tracks:</h2>
+                    <form className="search-form" onKeyUp={searchTracks}>
+                        <input type="text" onChange={(e) => setSearchKey(e.target.value)} placeholder='eg. We Will Rock You' />
+                    </form>
+                </div>
 
 
                 <table className='content-table search'>
