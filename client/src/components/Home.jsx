@@ -20,7 +20,13 @@ const Home = ({ token, setToken }) => {
     const handleDelete = async (id) => {
         try {
             await axios.delete("http://localhost:8800/songs/" + id)
-            window.location.reload()
+            axios.get("http://localhost:8800/songs")
+            .then(res => {
+                setSongs(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
         } catch (err) {
             console.log(err)
         }
@@ -32,11 +38,31 @@ const Home = ({ token, setToken }) => {
         console.log(e.target.value)
         if(e.target.value === "sort-by"){
             return;
+        } else if(e.target.value === "album"){
+            axios.get("http://localhost:8800/songs/album")
+            .then(res => {
+                setSongs(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        } else if(e.target.value === "artist"){
+            axios.get("http://localhost:8800/songs/artist")
+            .then(res => {
+                setSongs(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
         } else if(e.target.value === "order-added"){
-            navigate("/")
-        } else {
-            navigate(`/${e.target.value}`)
-        }
+            axios.get("http://localhost:8800/songs")
+            .then(res => {
+                setSongs(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        } 
     }
 
     const logout = () => {
